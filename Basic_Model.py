@@ -14,21 +14,21 @@ IDX_Health = 4
 IDX_Single = 5
 IDX_Cost = 6
 IDX_Qaly = 7
-IDX_RelationshipDuration = 8  # 伴侣关系剩余年数
-IDX_CooldownDuration = 9      # 冷静期剩余年数
+IDX_RelationshipDuration = 8
+IDX_CooldownDuration = 9
 IDX_Transition = 0
 
 # 初始化属性
 population[:, IDX_Id] = np.arange(N)
-population[:, IDX_Sex] = np.random.randint(0, 2, N)
+population[:, IDX_Sex] = np.random.randint(0, 2, N)   # 0表示男性，1表示女性
 population[:, IDX_Age] = 40
-population[:, IDX_Vaccine] = np.random.binomial(1, 0.2, N)
-population[:, IDX_Health] = 0
-population[:, IDX_Single] = 0
+population[:, IDX_Vaccine] = np.random.binomial(1, 0.2, N)   #按一定覆盖率接种疫苗
+population[:, IDX_Health] = 0   # 健康状态分为15种，0表示健康，1表示普通感染，2表示持续感染，3-14表示癌症各期，15表示死亡
+population[:, IDX_Single] = 0   # 0表示单身可配对状态，1表示配对状态，2表示分手冷静期
 population[:, IDX_Cost] = 0.0
 population[:, IDX_Qaly] = 0.0
-population[:, IDX_RelationshipDuration] = 0
-population[:, IDX_CooldownDuration] = 0
+population[:, IDX_RelationshipDuration] = 0   # 伴侣关系剩余年数
+population[:, IDX_CooldownDuration] = 0   # 冷静期剩余年数
 population[:, IDX_Transition] = 0
 
 # 配对与性传播
