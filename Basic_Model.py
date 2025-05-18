@@ -16,7 +16,7 @@ IDX_Cost = 6
 IDX_Qaly = 7
 IDX_RelationshipDuration = 8
 IDX_CooldownDuration = 9
-IDX_Transition = 0
+IDX_Transition = 10
 
 # 初始化属性
 population[:, IDX_Id] = np.arange(N)
